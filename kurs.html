@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс валют</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="header-logo.svg">
+    <script>
+        function convertToForeignCurrency() {
+            const rubles = parseFloat(document.getElementById('rubles').value);
+            const currencySelect = document.getElementById('foreignCurrency');
+            const selectedCurrency = currencySelect.options[currencySelect.selectedIndex].value;
+
+            fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+                .then(response => response.json())
+                .then(data => {
+                    const exchangeRate = data.Valute[selectedCurrency].Value;
+                    const result = rubles / exchangeRate;
+                    document.getElementById('result').textContent = `Результат перевода: ${result.toFixed(2)} ${selectedCurrency}`;
+                })
+                .catch(error => console.error('Ошибка при загрузке курса валют', error));
+        }
+
+    </script>
+    <style>
+        .currency-converter {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        .exchange {
+            margin-bottom: 20px;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .result {
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="currency-converter">
+        <h2>Калькулятор валют</h2>
+        <div class="exchange">
+            <input type="number" id="rubles" placeholder="Сумма в рублях" oninput="convertToForeignCurrency()">
+            <select id="foreignCurrency" onchange="convertToForeignCurrency()">
+                <option value="USD">Доллар США (USD)</option>
+                <option value="EUR">Евро (EUR)</option>
+                <option value="CNY">Китайский юань (CNY)</option>
+                <option value="JPY">Японская иена (JPY)</option>
+                <option value="GBP">Фунт стерлингов (GBP)</option>
+                <option value="VND">Вьетнамский донг (VND)</option>
+            </select>
+        </div>
+        <div class="result" id="result">Результат перевода</div>
+    </div>
+
+    <aside class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="about.html">О компании</a></li>
+            <li><a href="news.html">Новости</a></li>
+            <li><a href="kurs.html">Курс валют</a></li>
+            <li><a href="contacts.html">Контактные данные</a></li>
+            <li><a href="video.html">Видео</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+</body>
+</html>
