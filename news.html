@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости Синко-Банк</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="header-logo.svg">
+    <script>
+        function toggleNews(id) {
+            const newsCard = document.getElementById(id);
+            const fullText = newsCard.querySelector('.news-full');
+            if (fullText.style.display === 'none' || fullText.style.display === '') {
+                fullText.style.display = 'block';
+            } else {
+                fullText.style.display = 'none';
+            }
+        }
+    </script>
+    <style>
+        .news-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .news-date {
+            font-size: 0.9em;
+            color: #777777;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .news-summary {
+            font-size: 1em;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .show-button {
+            background-color: #525252;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .news-full {
+            display: none;
+            margin-top: 10px;
+        }
+
+
+        .show-button:hover {
+            background-color: #5ca442;
+        }
+
+            
+        .news-card {
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div class="news-container">
+        <div class="news-card" id="news1">
+            <div class="news-date">01.06.2024</div>
+            <div class="news-title">Синко-Банк запускает новый мобильный банк</div>
+            <div class="news-summary">Синко-Банк рад объявить о запуске нового мобильного приложения, которое позволит клиентам...</div>
+            <button class="show-button" onclick="toggleNews('news1')">Показать</button>
+            <div class="news-full">
+                <p>Синко-Банк рад объявить о запуске нового мобильного приложения, которое позволит клиентам управлять своими финансами ещё более удобно и безопасно. Приложение включает множество новых функций...</p>
+            </div>
+        </div>
+
+        <div class="news-card" id="news2">
+            <div class="news-date">15.05.2024</div>
+            <div class="news-title">Синко-Банк увеличил капитал на 10%</div>
+            <div class="news-summary">В этом месяце Синко-Банк сообщил о значительном увеличении капитала, что позволит...</div>
+            <button class="show-button" onclick="toggleNews('news2')">Показать</button>
+            <div class="news-full">
+                <p>В этом месяце Синко-Банк сообщил о значительном увеличении капитала, что позволит банку расширить свою деятельность и улучшить условия для клиентов. Это достижение стало возможным благодаря...</p>
+            </div>
+        </div>
+
+        <div class="news-card" id="news3">
+            <div class="news-date">10.04.2024</div>
+            <div class="news-title">Открытие нового офиса в Москве</div>
+            <div class="news-summary">Синко-Банк с гордостью сообщает об открытии нового офиса в центре Москвы. Новый офис предлагает...</div>
+            <button class="show-button" onclick="toggleNews('news3')">Показать</button>
+            <div class="news-full">
+                <p>Синко-Банк с гордостью сообщает об открытии нового офиса в центре Москвы. Новый офис предлагает клиентам современное обслуживание, комфортные условия и широкий спектр банковских услуг...</p>
+            </div>
+        </div>
+
+        <div class="news-card" id="news4">
+            <div class="news-date">25.03.2024</div>
+            <div class="news-title">Синко-Банк внедряет биометрическую аутентификацию</div>
+            <div class="news-summary">В рамках повышения безопасности, Синко-Банк внедряет биометрическую аутентификацию для доступа к...</div>
+            <button class="show-button" onclick="toggleNews('news4')">Показать</button>
+            <div class="news-full">
+                <p>В рамках повышения безопасности, Синко-Банк внедряет биометрическую аутентификацию для доступа к своим услугам. Клиенты теперь могут использовать отпечатки пальцев и распознавание лица для...</p>
+            </div>
+        </div>
+
+        <div class="news-card" id="news5">
+            <div class="news-date">05.02.2024</div>
+            <div class="news-title">Синко-Банк запускает новую программу кредитования</div>
+            <div class="news-summary">Синко-Банк объявляет о запуске новой программы кредитования для малого и среднего бизнеса, которая...</div>
+            <button class="show-button" onclick="toggleNews('news5')">Показать</button>
+            <div class="news-full">
+                <p>Синко-Банк объявляет о запуске новой программы кредитования для малого и среднего бизнеса, которая направлена на поддержку предпринимателей и развитие бизнеса в России. Программа предлагает...</p>
+            </div>
+        </div>
+
+        <div class="news-card" id="news6">
+            <div class="news-date">20.01.2024</div>
+            <div class="news-title">Синко-Банк вошел в топ-10 банков России</div>
+            <div class="news-summary">Синко-Банк с гордостью сообщает, что вошел в топ-10 банков России по объему активов и качеству...</div>
+            <button class="show-button" onclick="toggleNews('news6')">Показать</button>
+            <div class="news-full">
+                <p>Синко-Банк с гордостью сообщает, что вошел в топ-10 банков России по объему активов и качеству обслуживания. Это достижение стало возможным благодаря усилиям всей команды и доверию наших клиентов...</p>
+            </div>
+        </div>
+
+        <div class="news-card" id="news7">
+            <div class="news-date">10.12.2023</div>
+            <div class="news-title">Синко-Банк поддерживает благотворительность</div>
+            <div class="news-summary">Синко-Банк продолжает поддерживать благотворительные инициативы и программы, направленные на...</div>
+            <button class="show-button" onclick="toggleNews('news7')">Показать</button>
+            <div class="news-full">
+                <p>Синко-Банк продолжает поддерживать благотворительные инициативы и программы, направленные на помощь детям и семьям в трудной жизненной ситуации. В этом году банк выделил значительные средства на...</p>
+            </div>
+        </div>
+
+        <div class="news-card" id="news8">
+            <div class="news-date">25.11.2023</div>
+            <div class="news-title">Синко-Банк получил награду за инновации</div>
+            <div class="news-summary">Синко-Банк был удостоен престижной награды за внедрение инновационных решений в банковской сфере...</div>
+            <button class="show-button" onclick="toggleNews('news8')">Показать</button>
+            <div class="news-full">
+                <p>Синко-Банк был удостоен престижной награды за внедрение инновационных решений в банковской сфере. Награда подтверждает лидерство банка в области технологий и клиентского сервиса...</p>
+            </div>
+        </div>
+
+        <div class="news-card" id="news9">
+            <div class="news-date">15.10.2023</div>
+            <div class="news-title">Синко-Банк запускает новый депозитный продукт</div>
+            <div class="news-summary">Синко-Банк рад предложить своим клиентам новый депозитный продукт с высокими процентными ставками и...</div>
+            <button class="show-button" onclick="toggleNews('news9')">Показать</button>
+            <div class="news-full">
+                <p>Синко-Банк рад предложить своим клиентам новый депозитный продукт с высокими процентными ставками и гибкими условиями. Этот продукт создан для тех, кто хочет максимально эффективно управлять своими сбережениями...</p>
+            </div>
+        </div>
+
+        <div class="news-card" id="news10">
+            <div class="news-date">01.09.2023</div>
+            <div class="news-title">Синко-Банк расширяет сеть банкоматов</div>
+            <div class="news-summary">Синко-Банк продолжает расширять свою сеть банкоматов по всей России, делая банковские услуги более доступными для...</div>
+            <button class="show-button" onclick="toggleNews('news10')">Показать</button>
+            <div class="news-full">
+                <p>Синко-Банк продолжает расширять свою сеть банкоматов по всей России, делая банковские услуги более доступными для клиентов. В этом году планируется установить более 500 новых банкоматов...</p>
+            </div>
+        </div>
+    </div>
+
+    <aside class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="about.html">О компании</a></li>
+            <li><a href="news.html">Новости</a></li>
+            <li><a href="kurs.html">Курс валют</a></li>
+            <li><a href="contacts.html">Контактные данные</a></li>
+            <li><a href="video.html">Видео</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+</body>
+</html>
